@@ -48,13 +48,15 @@ font-weight: bold;
 }
 .btn{
     margin-top: 20px;
-    display: inline-block;
     font-size:11px;
     color:#fff;
     background: #10C9C9;
     padding: 8px 34px;
     border:none;
     cursor: pointer;
+}
+.btn-reg{
+    background:red;
 }
 .w3-light-grey{
     background-color:#f1f1f1;
