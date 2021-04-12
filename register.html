@@ -10,10 +10,10 @@
 
     <title>Hello, world!</title>
     <style>
-        span{
+        .red{
             color: red;
         }
-        .gen,.state{
+        .blk{
             display: block;
         }
     </style>
@@ -24,8 +24,8 @@
             <h1>User Form</h1>
             <form>
                 <div class="form-group">
-                    <label for="">First Name: <span>*</span></label>
-                    <input type="text" class="form-control mt-3" id="name" placeholder="First Name" required >
+                    <label for="">First Name: <span class="red">*</span></label>
+                    <input type="text" class="form-control mt-3" id="name" placeholder="First Name" >
                     <div class="invalid-feedback">
                         Name must between 3 and 10 characters
                     </div>
@@ -39,8 +39,8 @@
                 </div>
                 
                 <div class="form-group">
-                    <label class="mt-3">Age: <span>*</span></label>
-                    <input type="text" class="form-control mt-3" id="age" placeholder="Age" required >
+                    <label class="mt-3">Age: <span class="red">*</span></label>
+                    <input type="text" class="form-control mt-3" id="age" placeholder="Age">
                     <div class="invalid-feedback">
                         Enter a valid age
                     </div>
@@ -53,8 +53,8 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="gen mt-3">Gender: <span>*</span></label>
-                    <input type="radio" name="gender" value="Male" id="male" class="mt-3" checked> Male&nbsp;
+                    <label class="gen blk mt-3">Gender: <span  class="red">*</span></label>
+                    <input type="radio" name="gender" value="Male" id="male" class="mt-3"> Male&nbsp;
                     <input type="radio" name="gender" value="Female" id="female" class="mt-3"> Female&nbsp;
                     <input type="radio" name="gender" value="trans" id="trans" class="mt-3"> Transgender
                     <div class="invalid-feedback">
@@ -62,8 +62,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="state mt-3">State:</label>
-                    <select class="mt-3" name="state" required >
+                    <label class="state blk mt-3">State:</label>
+                    <select class="mt-3" name="state" id="state">
+                        <option value="Please Select" selected >Please Select</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -101,16 +102,19 @@
                         <option value="Uttarakhand">Uttarakhand</option>
                         <option value="West Bengal">West Bengal</option>
                       </select>
+                      <div class="invalid-feedback">
+                        Please select a state
+                    </div>
                 </div>
                 <div class="form-group">
                     <label class="mt-3">Upload Resume:</label>
-                    <input type="file" class="form-control mt-3" id="resume" required>
+                    <input type="file" class="form-control mt-3" id="resume">
                     <div class="invalid-feedback">
-                        Only pdf of maximum 500kb size is allowed
+                        Pdf is allowed, allowed max.size: 500kb
                     </div>
                 </div>
-                <input type="submit" value="submit" id="submit" class="btn btn-primary btn-block col-12 mt-3">
-              <a href="index.html">Go to Home</a>
+                <button type="button" value="submit" id="submit" onclick="validateAll()" class="btn btn-primary btn-block col-12 mt-3">Submit</button>
+                <a href="index.html">Go to Home</a>
             </form>
         </div>
     </div>
